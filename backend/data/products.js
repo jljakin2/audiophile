@@ -378,7 +378,7 @@ const products = [
         desktop:
           "https://res.cloudinary.com/dpp64ouz9/image/upload/v1623012974/audiophileAssets/product-xx59-headphones/desktop/image-gallery-3_qeeug5.jpg",
       },
-      card: "https://res.cloudinary.com/dpp64ouz9/image/upload/v1623012912/audiophileAssets/cart/image-xx59-headphones_hpsqul.jpg",
+      cart: "https://res.cloudinary.com/dpp64ouz9/image/upload/v1623012912/audiophileAssets/cart/image-xx59-headphones_hpsqul.jpg",
     },
     others: [
       {
