@@ -5,7 +5,7 @@ import Order from "../models/orderModel.js";
 // @route POST /api/orders
 // @access Public
 const createNewOrder = asyncHandler(async (req, res) => {
-  const { orderItems, name, email, paymentType, grandTotal } = req.body;
+  const { orderItems, fullName, email, paymentType, grandTotal } = req.body;
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
@@ -13,7 +13,7 @@ const createNewOrder = asyncHandler(async (req, res) => {
   } else {
     const order = new Order({
       orderItems,
-      name,
+      fullName,
       email,
       paymentType,
       grandTotal,

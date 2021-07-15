@@ -22,7 +22,7 @@ const orderSchema = mongoose.Schema(
         },
       },
     ],
-    name: {
+    fullName: {
       type: String,
       required: true,
     },
