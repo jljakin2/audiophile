@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import dotenv from "dotenv";
 import colors from "colors";
 import productRoutes from "./routes/productRoutes.js";
@@ -18,11 +19,20 @@ const app = express();
 app.use(express.json());
 
 // all api routes
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
+
+const __dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.get("*", res =>
+    res.sendFile(path.resolve(__dirname, "frontend", "index.html"))
+  );
+} else {
+  app.get("/", res => {
+    res.send("API is running...");
+  });
+}
 
 // bring in middleware for errors
 app.use(notFound);
