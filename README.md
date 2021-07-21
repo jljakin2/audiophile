@@ -51,7 +51,7 @@ Users should be able to:
 - Styled Components (custom CSS)
   - Flexbox
   - Grid
-- Cloudinary to house assets
+- Cloudinary to house assets [link to cloud directory](https://cloudinary.com/console/c-6f3289f6bb53bbf2450219c65b4265/media_library/folders/66a467a467bf3db1fef1ebe531bd97a3)
 - Desktop-first workflow
 
 ### What I learned
