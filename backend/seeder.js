@@ -11,6 +11,7 @@ connectDB();
 
 const importData = async () => {
   try {
+    // remove all data then take data file from products.js to add to database
     await Product.deleteMany();
     await Product.insertMany(products);
 
@@ -24,6 +25,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
+    // remove all data
     await Product.deleteMany();
 
     console.log("Data Destroyed!".red.inverse);
@@ -34,6 +36,7 @@ const destroyData = async () => {
   }
 };
 
+// if the third argument to the npm run script is "-d" remove all data, else add the products from the data file
 if (process.argv[2] === "-d") {
   destroyData();
 } else {

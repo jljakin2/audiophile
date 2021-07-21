@@ -7,6 +7,7 @@ import Order from "../models/orderModel.js";
 const createNewOrder = asyncHandler(async (req, res) => {
   const { orderItems, fullName, email, paymentType, grandTotal } = req.body;
 
+  // check if there any order items and throw error if not, otherwise, create order using Order model
   if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error("No order items");

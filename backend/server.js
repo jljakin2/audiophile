@@ -17,10 +17,10 @@ const app = express();
 
 app.use(express.json());
 
+// all api routes
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
-
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 
