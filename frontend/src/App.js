@@ -43,7 +43,7 @@ const App = () => {
       {/* apply global style to the app */}
       <GlobalStyle />
       <Router>
-        {/* scroll to top component is needed to make sure when components change, the app takes the user back to the top of the page */}
+        {/* scroll to top component is needed to make sure when screen components change, the app takes the user back to the top of the page */}
         <ScrollToTop />
         {darkScreen && <DarkScreen />}
         {showModal && <OrderModal />}
