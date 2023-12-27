@@ -25,11 +25,11 @@ app.use("/api/orders", orderRoutes);
 const __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/build")));
-  app.get("*", res =>
-    res.sendFile(path.resolve(__dirname, "frontend", "index.html"))
-  );
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
+  });
 } else {
-  app.get("/", res => {
+  app.get("/", (res) => {
     res.send("API is running...");
   });
 }
